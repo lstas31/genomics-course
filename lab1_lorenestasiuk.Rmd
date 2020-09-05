@@ -1,0 +1,54 @@
+---
+title: "lab1_lorenestasiuk"
+author: "Lorene Stasiuk"
+date: "8/24/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+### Exercise 1
+```{r ex1}
+### For x = 3 and y = 15, compute the sum, difference, product and quotient of x and y
+
+x <- 3
+y <- 15
+### sum
+x + y
+### difference
+x - y
+### product
+x * y
+### quotient
+x/y
+```
+
+
+### Exercise 2
+```{r ex2}
+### For x = 2 and y = 3, Test x^5 is greater than y^4 and return a logical value
+x <- 2
+y <- 3
+z = (x^5) > (y^4)
+z
+```
+
+### Exercise 3
+```{r ex3}
+### Create a vector of the values 22, 62, 148, 43 and 129. Determine the sum of the vector. Divide each value in the vector by the sum to determine relate frequency.
+vec <- c(22, 62, 148, 43, 129)
+sum(vec)
+vec/sum(vec)
+```
+
+
+### Exercise 4
+```{r ex4}
+### Create a vector of the nucleotides A, T, C and G. Sort the vector.
+nuc <- c("A,T,C,G")
+sort(nuc)
+```
