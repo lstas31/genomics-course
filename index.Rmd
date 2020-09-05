@@ -3,28 +3,39 @@ title: "index"
 author: "Lorene Stasiuk"
 date: "8/31/2020"
 output: html_document
+bibliography: references.bib
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+The files from course repository for Evolutionary Genomics and Bioinformatics.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+* 1 : [Introduction to R and Reproducible Research](lab1_lorenestasiuk.html)
+* 2 : [git, GitHub and Rstudio project](lab2_lorenestasiuk.html)
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Application written in R [@RCoreTeam] using the Shiny framework [@Chang2015].
 
-```{r cars}
-summary(cars)
+# REFERENCES
 ```
+@Misc{Chang2015,
+  Title                    = {shiny: Web Application Framework for R. R package version 0.12.1},
 
-## Including Plots
+  Author                   = {Chang, W. and Cheng, J. and Allaire, JJ. and Xie, Y. and McPherson, J. },
+  Year                     = {2015},
 
-You can also embed plots, for example:
+  Type                     = {Computer Program},
+  Url                      = {http://CRAN.R-project.org/package=shiny}
+}
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+@Article{RCoreTeam,
+  Title                    = {R: A Language and Environment for Statistical Computing},
+  Author                   = {{R Core Team}},
+  Year                     = {2015},
+
+  Type                     = {Journal Article},
+  Url                      = {http://www.R-project.org}
+}
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
