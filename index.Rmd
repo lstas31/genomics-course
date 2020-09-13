@@ -15,6 +15,8 @@ The files from course repository for Evolutionary Genomics and Bioinformatics.
 
 * 1 : [Introduction to R and Reproducible Research](lab1_lorenestasiuk.html)
 * 2 : [git, GitHub and Rstudio project](lab2_lorenestasiuk.html)
+* 3a: [data wrangling // starting with data](lab3a_lorenestasiuk.html)
+* 3b: [data wrangling // manipulating data](lab3b_lorenestasiuk.html)
 
 Application written in R [@RCoreTeam] using the Shiny framework [@Chang2015].
 
