@@ -1,0 +1,164 @@
+---
+title: "lab4_lorenestasiuk"
+author: "Lorene Stasiuk"
+date: "9/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library("tidyverse")
+```
+
+```{r}
+report_03_13_2020 <-   read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/03-13-2020.csv"))%>% rename(Country_Region = "Country/Region", Province_State = "Province/State")
+```
+
+```{r, check}
+### Check the table properties to make sure the data imported as we expected
+str(report_03_13_2020)
+```
+
+```{r,view}
+view(report_03_13_2020)
+```
+
+```{r}
+library(DT)
+```
+
+```{r, datatable}
+### You can make interactive data tables with DT package
+datatable(report_03_13_2020)
+```
+
+### We use data from 3/13/202 and 9/13/2020
+
+### Exercises (Part 1)
+```{r, exercise1}
+### The format of the daily reports has changed over time. What are the differences between 3/13/2020, the Friday before spring break 2020 and yesterday 6 months later on 9/13/2020? Load the files into R and use str() and View() (or in the top right corner click on Environment and then the data frame.). Note the in the more recent dates they have changed the column headers so that it is no longer necessary to rename Province_State and Country_Region.
+
+report_09_13_2020 <-   read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/09-13-2020.csv"))
+
+str(report_09_13_2020)
+
+view(report_09_13_2020)
+
+datatable(report_09_13_2020)
+
+# report_09_13_2020 shows more columns compared to the earlier report report_03_13_2020, including Active, Combined_Key, Incidence_Rate, and Case-Fatality_Ratio.
+```
+
+```{r, exercise2}
+### Many countries have multiple entries representing different regions (e.g. counties and states). To get the counts for a country we need to summarise the data. Use group_by() and summarize() to make a data frame (tibble) with total counts for each country.
+
+# We will use the data from report_03_13_2020
+country1 <- report_03_13_2020 %>% group_by(Country_Region) %>% summarise(Deaths = sum(Deaths))
+```
+
+```{r, exercise3}
+### To get counts for confirmed cases per U.S state use filter() to select US and group_by and summarize as above.
+
+# Deaths in March
+USA1 <- report_03_13_2020 %>% filter(Country_Region == "US")%>% group_by(Province_State) %>% summarise(Deaths = sum(Deaths))%>% slice(1:10)
+
+# Deaths in Sept
+USA2 <- report_09_13_2020 %>% filter(Country_Region == "US")%>% group_by(Province_State) %>% summarise(Deaths = sum(Deaths))%>% slice(1:10)
+
+# Confirmed in March
+USA3 <- report_03_13_2020 %>% filter(Country_Region == "US")%>% group_by(Province_State) %>% summarise(Confirm = sum(Confirmed))%>% slice(1:10)
+
+#Confirmed in Sept
+USA4 <- report_09_13_2020 %>% filter(Country_Region == "US")%>% group_by(Province_State) %>% summarise(Confirm = sum(Confirmed))%>% slice(1:10)
+
+```
+
+```{r, exercise4}
+Deaths <- country1 %>% arrange(desc(Deaths)) %>% slice(1:10)
+```
+
+```{r, ex4_confirm}
+country2 <- report_03_13_2020 %>% group_by(Country_Region) %>% summarise(Confirm = sum(Confirmed))
+```
+
+```{r, ex4_confirmed}
+Confirmed <- country2 %>% arrange(desc(Confirm)) %>% slice(1:10)
+```
+### Exercise (Part 2): March Data
+```{r, exerccise5}
+ggplot(data = Deaths, aes(x = Country_Region , y = Deaths , color = Country_Region)) + geom_point () + theme(legend.position = "none")
+
+ggplot(data = Confirmed, aes(x = Country_Region , y = Confirm , color = Country_Region)) + geom_point () + theme(legend.position = "none")
+```
+
+```{r, exercie5p2}
+### Now we will do the same for september data
+country3 <- report_09_13_2020 %>% group_by(Country_Region) %>% summarise(Deaths = sum(Deaths))
+```
+
+```{r, exercie5p3}
+Deaths <- country3 %>% arrange(desc(Deaths)) %>% slice(1:10)
+```
+
+```{r, exercie5p4}
+Deaths <- country3 %>% arrange(desc(Deaths)) %>% slice(1:10)
+```
+
+```{r, exercie5p5}
+country4 <- report_09_13_2020 %>% group_by(Country_Region) %>% summarise(Confirm = sum(Confirmed))
+```
+```{r, exercie5p6}
+Confirmed <- country4 %>% arrange(desc(Confirm)) %>% slice(1:10)
+```
+
+### Exercises (Part 2): September Data
+
+```{r, exerccise5sept}
+ggplot(data = Deaths, aes(x = Country_Region , y = Deaths , color = Country_Region)) + geom_point () + theme(legend.position = "none")
+
+ggplot(data = Confirmed, aes(x = Country_Region , y = Confirm , color = Country_Region)) + geom_point () + theme(legend.position = "none")
+```
+
+```{r, exercise6}
+### Make using geom_bar of the 10 states with the most confirmed cases and deaths (two separate graphs) on 3/12/2020 and 9/12/2020.
+
+#Deaths in March
+ggplot(data = USA1, aes(x = Province_State , y = Deaths , color = Province_State)) + geom_bar(stat="identity") + theme(legend.position = "none")
+
+#Deaths in Sept
+ggplot(data = USA2, aes(x = Province_State , y = Deaths , color = Province_State)) + geom_bar(stat="identity") + theme(legend.position = "none")
+
+#Confirmed in March
+ggplot(data = USA3, aes(x = Province_State , y = Confirm , color = Province_State)) + geom_bar(stat="identity") + theme(legend.position = "none")
+
+#Confirmed in Sept
+ggplot(data = USA4, aes(x = Province_State , y = Confirm , color = Province_State)) + geom_bar(stat="identity") + theme(legend.position = "none")
+```
+
+
+Application written in R [@RCoreTeam] using the Shiny framework [@Chang2015].
+
+# REFERENCES
+```
+@Misc{Chang2015,
+  Title                    = {shiny: Web Application Framework for R. R package version 0.12.1},
+
+  Author                   = {Chang, W. and Cheng, J. and Allaire, JJ. and Xie, Y. and McPherson, J. },
+  Year                     = {2015},
+
+  Type                     = {Computer Program},
+  Url                      = {http://CRAN.R-project.org/package=shiny}
+}
+
+@Article{RCoreTeam,
+  Title                    = {R: A Language and Environment for Statistical Computing},
+  Author                   = {{R Core Team}},
+  Year                     = {2015},
+
+  Type                     = {Journal Article},
+  Url                      = {http://www.R-project.org}
+}
+```
