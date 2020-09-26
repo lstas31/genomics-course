@@ -18,5 +18,6 @@ The files from course repository for Evolutionary Genomics and Bioinformatics.
 * 3a: [data wrangling // starting with data](lab3a_lorenestasiuk.html)
 * 3b: [data wrangling // manipulating data](lab3b_lorenestasiuk.html)
 * 4 : [Data wrangling and graphing COVID-19 reporting data (Part 1)](lab4_lorenestasiuk.html)
-* 4a and 5: [Data wrangling and graphing COVID-19 reporting data (Part 1 and 2)](datavisualization_lorenestasiuk.html)
-* 5a : [Interactive Graphs and Animations from the COVID-19 reporting data)](lab5extra_lorenestasiuk.html)
+* 4a and 5 (Question 1): [Data wrangling and graphing COVID-19 reporting data (Part 1 and 2)](datavisualization_lorenestasiuk.html)
+* 5 : [Data wrangling and graphing COVID-19 reporting data (Part 2)](lab5_lorenestasiuk.html)
+* 5 extra : [Interactive Graphs and Animations from the COVID-19 reporting data)](lab5extra_lorenestasiuk.html)
