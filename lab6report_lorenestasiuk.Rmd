@@ -3,6 +3,7 @@ title: "lab6report_lorenestasiuk"
 author: "Lorene Stasiuk"
 date: "9/28/2020"
 output: html_document
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -281,46 +282,7 @@ ggplotly(
   theme(axis.text = element_blank())
 )
 ```
-
-Application written in R [@RCoreTeam] using the Shiny framework [@Chang2015].
+Application written in R [@RCoreTeam] using the Shiny framework [@Chang2015]. Data aquired from [@JohnsHopkinsUniversity].
 
 # REFERENCES
-```
-@Misc{Chang2015,
-  Title                    = {shiny: Web Application Framework for R. R package version 0.12.1},
 
-  Author                   = {Chang, W. and Cheng, J. and Allaire, JJ. and Xie, Y. and McPherson, J. },
-  Year                     = {2015},
-
-  Type                     = {Computer Program},
-  Url                      = {http://CRAN.R-project.org/package=shiny}
-}
-
-@Article{RCoreTeam,
-  Title                    = {R: A Language and Environment for Statistical Computing},
-  Author                   = {{R Core Team}},
-  Year                     = {2015},
-
-  Type                     = {Journal Article},
-  Url                      = {http://www.R-project.org}
-}
-
-@Misc{JohnsHopkinsUniversity,
-  Title                    = {COVID-19 data},
-  Author                   = {{Johns Hopkins University}},
-  Year                     = {2020},
-
-  Type                     = {GitHub Repository},
-  Url                      = {https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data
-}
-}
-
-@Misc{lab6_lorenestasiuk,
-  Title                    = {lab6_lorenestasiuk},
-  Author                   = {{Lorene Stasiuk}},
-  Year                     = {2020},
-
-  Type                     = {GitHub Repository},
-  Url                      = {lab6_lorenestasiuk.html}
-}
-```
