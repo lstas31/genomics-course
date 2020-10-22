@@ -11,6 +11,8 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+!["ISB!"](images/image1.jpg)
+
 The files from course repository for Evolutionary Genomics and Bioinformatics.
 
 * 1 : [Introduction to R and Reproducible Research](lab1_lorenestasiuk.html)
