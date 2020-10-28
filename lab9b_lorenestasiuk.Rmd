@@ -1,0 +1,169 @@
+---
+title: "lab9b_lorenestasiuk"
+author: "Lorene Stasiuk"
+date: "10/28/2020"
+output: html_document
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Conditional statements with if-else
+```{r, ifstatements}
+x <- 31 
+if(x > 3) {
+        print (x)
+} else {
+        print("x is less than 3")
+}
+
+```
+
+```{r, if2}
+a <- 1
+b <- 50
+c <- 30
+
+if (a+b <= 12){
+  print("Happy Birthday")
+} else if (a*c == 40){
+  print("orange")
+} else{
+  print(":(")
+}
+```
+
+## For loops
+```{r, forloop}
+for (i in 1:20){
+  if (i > 12){
+    print(i)
+  }
+}
+```
+
+```{r, for2}
+x <- c("a", "b", "c", "d")
+for(i in 1:2) {
+        ## Print out each element of 'x'
+        print(x[i])  
+}
+```
+
+```{r, for3}
+## Generate a sequence based on length of 'x'
+for(i in seq_along(x)) {   
+        print(x[i])
+}
+```
+
+```{r, for4}
+for(letter in x) {
+        print(letter)
+}
+```
+
+## Nested for loops
+```{r, nested}
+x <- matrix(1:2, 2, 3)
+
+for(i in seq_len(nrow(x))) {
+        for(j in seq_len(ncol(x))) {
+                print(x[i, j])
+        }   
+}
+```
+
+## While loops
+```{r, whileloop1}
+e <- 5
+while (2*e <= 20){
+  print(e)
+  e=e+2
+}
+```
+
+```{r, whileloop2}
+z <- 5
+set.seed(1)
+while(z >= 4 && z <= 7) {
+        coin <- rbinom(1, 1, 0.5)
+        
+        if(coin == 1) {  ## random walk
+                z <- z + 4
+        } else {
+                z <- z - 2
+        } 
+}
+print(z)
+```
+
+## Functions in R
+```{r, function1}
+# Here’s a simple function that takes no arguments and does nothing.
+
+f <- function() {
+         ## This is an empty function
+ }
+ ## Functions have their own class
+ class(f)  
+
+## Execute this function
+f()       
+```
+
+```{r, function2}
+# The next thing we can do is create a function that actually has a non-trivial function body.
+
+f <- function() {
+        cat("Hi there!\n")
+ }
+ f()
+```
+```{r, function3}
+# The last aspect of a basic function is the function arguments. These are the options that you can specify to the user that the user may explicity set. For this basic function, we can add an argument that determines how many times “Hello, world!” is printed to the console.
+
+f <- function(num) {
+  for(i in seq_len(num)) {
+        cat("Hi there!\n")
+  }
+ }
+ f(5)
+```
+
+```{r, function4}
+# This next function returns the total number of characters printed to the console.
+
+f <- function(num) {
+         hello <- "paenutbutter\n"
+         for(i in seq_len(num)) {
+                 cat(hello)
+         }
+         chars <- nchar(hello) * num
+         chars
+ }
+ meaningoflife <- f(3)
+
+ print(meaningoflife)
+```
+```{r, fucntion5}
+# setting a default value for the argument num
+f <- function(num = 1) {
+         hello <- "moose\n"
+         for(i in seq_len(num)) {
+                 cat(hello)
+         }
+         chars <- nchar(hello) * num
+         chars
+ }
+ f()    ## Use default value for 'num'
+f(4)
+```
+```{r, function6}
+f(num = 10)
+
+```
+Application written in R [@RCoreTeam] using the Shiny framework [@Chang2015].
+# REFERENCES

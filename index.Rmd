@@ -27,3 +27,4 @@ The files from course repository for Evolutionary Genomics and Bioinformatics.
 * 6 report : [Data Maps and Interactive Graphs from the COVID-19 reporting data](labreport6_lorenestasiuk.html)
 * 8 : [Sequence Alignment, Phylogenetic Analysis and Tree Visualization](lab8_lorenestasiuk.html)
 * 9a: [Programming in R - Regular Expressions](lab9a_lorenestasiuk.html)
+* 9b: [Programming in R - Control Structures and Functions](lab9b_lorenestasiuk.html)
