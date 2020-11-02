@@ -28,3 +28,4 @@ The files from course repository for Evolutionary Genomics and Bioinformatics.
 * 8 : [Sequence Alignment, Phylogenetic Analysis and Tree Visualization](lab8_lorenestasiuk.html)
 * 9a: [Programming in R - Regular Expressions](lab9a_lorenestasiuk.html)
 * 9b: [Programming in R - Control Structures and Functions](lab9b_lorenestasiuk.html)
+* 10: [Population genomics based on high throughput sequencing (HTS)](lab10_lorenestasiuk.html)
