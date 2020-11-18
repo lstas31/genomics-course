@@ -1,0 +1,30 @@
+---
+title: "lab12_lorenestasiuk"
+author: "Lorene Stasiuk"
+date: "11/16/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tour of Cytoscape
+
+!["Before"](images/lab12-0.jpg)
+
+
+
+!["After editing style"](images/lab12-1.jpg)
+
+# Basic Data Visalization 
+!["Basic data visualization"](images/network.jpg)
+
+# Example 1: STRING Protein Query Up-regulated Genes
+
+![Example 1: STRING Protein Query Up-regulated Genes](images/string 1.png)
+
+# Example 2: STRING Disease Query
+!["Example 2: STRING Disease Query"](images/String Network - ovarian cancer.png)
+
+#### Please note: I am unable to download and use the BiocManager package to complete the rest of this lab. Insteda I will make my GitHub Page look nicer.
