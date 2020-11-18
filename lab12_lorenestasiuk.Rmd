@@ -27,4 +27,4 @@ knitr::opts_chunk$set(echo = TRUE)
 # Example 2: STRING Disease Query
 !["Example 2: STRING Disease Query"](images/String Network - ovarian cancer.png)
 
-#### Please note: I am unable to download and use the BiocManager package to complete the rest of this lab. Insteda I will make my GitHub Page look nicer.
+#### Please note: I am unable to download and use the BiocManager package to complete the rest of this lab. Instead I will make my GitHub Page look nice.
